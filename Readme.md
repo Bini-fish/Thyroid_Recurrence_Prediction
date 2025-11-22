@@ -1,7 +1,65 @@
-Thyroid Recurrence PredictionThis project implements machine learning models to predict the recurrence of thyroid conditions in patients based on clinical data. It compares the performance of Decision Tree and K-Nearest Neighbors (KNN) classifiers.📊 Project OverviewObjective: Predict Recurred (Yes/No) based on attributes like Age, Gender, Pathology, and Treatment History.Models Used: Decision Tree Classifier, K-Nearest Neighbors (KNN).Best Model: Decision Tree (Accuracy: ~97.4%, Recall: 95%).📂 DatasetThe dataset (filtered_thyroid_data.csv) contains patient records including:Demographics: Age, GenderMedical History: Hx Radiotherapy, AdenopathyPathology: Pathology type, Focality, Risk, T/N/M stagingOutcome: Response, Recurred (Target)⚙️ InstallationClone the repository:git clone [https://github.com/yourusername/thyroid-recurrence-prediction.git](https://github.com/yourusername/thyroid-recurrence-prediction.git)
+# Thyroid Recurrence Prediction
+
+This project implements machine learning models to predict the recurrence of thyroid conditions in patients based on clinical data. It compares the performance of **Decision Tree** and **K-Nearest Neighbors (KNN)** classifiers to determine the most effective model for this medical diagnostic task.
+
+---
+
+##  Project Overview
+
+- **Objective:** Predict the target variable **Recurred (Yes/No)** based on patient attributes.  
+- **Models Implemented:**  
+  - Decision Tree Classifier  
+  - K-Nearest Neighbors (KNN)  
+- **Best Performing Model:**  
+  - **Decision Tree** (Accuracy: ~97.4%, Recall: 95%)  
+- **Key Techniques:** Mode Imputation, Label Encoding, One-Hot Encoding, Feature Scaling (StandardScaler)
+
+---
+
+##  Dataset
+
+The project uses the `filtered_thyroid_data.csv` dataset, which contains patient records with the following attributes:
+
+- **Demographics:** Age, Gender  
+- **Medical History:** Hx Radiotherapy, Adenopathy  
+- **Pathology:** Pathology type, Focality, Risk  
+- **Staging:** T, N, M, Stage  
+- **Outcome:** Response, **Recurred (Target Variable)**
+
+---
+
+##  Installation
+
+### 1. Clone the repository
+
+```bash
+git clone  https://github.com/Bini-fish/Thyroid_Recurrence_Prediction.git
 cd thyroid-recurrence-prediction
-Create a virtual environment (optional but recommended):python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-Install dependencies:pip install -r requirements.txt
-🚀 UsageEnsure the dataset is in the data/ folder.Run the main script:python src/main.py
-The script will output the accuracy scores and classification reports for both models in the console.📈 Results SummaryModelAccuracyPrecision (Recurred)Recall (Recurred)Decision Tree97.40%0.950.95KNN (K=5)94.81%1.000.79The Decision Tree was selected as the superior model due to its high recall rate, which is critical for medical diagnostics to minimize false negatives.📄 DocumentationFor a detailed analysis of the preprocessing steps, methodology, and observations, please refer to the Project Report.👤 Author[Your Name]
+```
+
+### 2. Create a virtual environment
+python -m venv venv
+# On Windows
+venv\Scripts\activate
+# On macOS/Linux
+source venv/bin/activate
+
+### 3. Install dependencies
+pip install -r requirements.txt
+
+## Usage
+
+Prepare Data: Ensure `filtered_thyroid_data.csv` is located in the data/ directory.
+
+Run the Analysis: Execute the main script:
+- `Thyroid.ipynb`
+
+# Results Summary
+
+| Model         | Accuracy | Precision (Recurred) | Recall (Recurred) | F1-Score |
+| ------------- | -------- | -------------------- | ----------------- | -------- |
+| Decision Tree | 97.40%   | 0.95                 | 0.95              | 0.95     |
+| KNN (K=5)     | 94.81%   | 1.00                 | 0.79              | 0.88     |
+
+## Conclusion
+The Decision Tree was selected as the superior model. Although KNN achieved perfect precision, the Decision Tree provided a significantly higher recall rate (0.95 vs 0.79), meaning it is much better at identifying actual recurrence cases
